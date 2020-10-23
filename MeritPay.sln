@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeritPay.Web", "MeritPay.Web\MeritPay.Web.csproj", "{CA15ACFA-5E21-4A56-98A6-B90E8B61175C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeritPay.Core", "MeritPay.Core\MeritPay.Core.csproj", "{170B4BF5-FE1D-49F9-A650-60EA01AA0509}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeritPay.Infrastructure", "MeritPay.DataLayer\MeritPay.Infrastructure.csproj", "{08AAAA90-5D4A-4568-B121-28FF8F787574}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{7C736050-0480-4B7C-8314-4132561D5F92}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AB056E97-32D4-43F8-BAF8-1F1DAC12566C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA15ACFA-5E21-4A56-98A6-B90E8B61175C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA15ACFA-5E21-4A56-98A6-B90E8B61175C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA15ACFA-5E21-4A56-98A6-B90E8B61175C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA15ACFA-5E21-4A56-98A6-B90E8B61175C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{170B4BF5-FE1D-49F9-A650-60EA01AA0509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{170B4BF5-FE1D-49F9-A650-60EA01AA0509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{170B4BF5-FE1D-49F9-A650-60EA01AA0509}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{170B4BF5-FE1D-49F9-A650-60EA01AA0509}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08AAAA90-5D4A-4568-B121-28FF8F787574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08AAAA90-5D4A-4568-B121-28FF8F787574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08AAAA90-5D4A-4568-B121-28FF8F787574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08AAAA90-5D4A-4568-B121-28FF8F787574}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CA15ACFA-5E21-4A56-98A6-B90E8B61175C} = {7C736050-0480-4B7C-8314-4132561D5F92}
+		{170B4BF5-FE1D-49F9-A650-60EA01AA0509} = {7C736050-0480-4B7C-8314-4132561D5F92}
+		{08AAAA90-5D4A-4568-B121-28FF8F787574} = {7C736050-0480-4B7C-8314-4132561D5F92}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89EA42DA-6F29-4263-9437-C3F486F1A292}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "ورود اطلاعات";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/js/InitView/ImportData.js?v=2"></script>
+<script src="~/js/ViewModel/ImportData.js?v=2"></script>
+<script type="text/javascript">
+    var viewModel;
+    $(function () {
+        viewModel = initVm({
+            gridDataUrl: '@Url.Action("GridData", "ImportData")',
+            saveFileUrl: '@Url.Action("SaveFile", "ImportData")',
+        });
+        kendo.bind($("#container"), viewModel);
+        initView(viewModel);
+    });
+</script>
+
+<partial name="_UploadFile" />
+<form id="frm">
+    <div id="container">      
+        <div d-wrp="گزارش" class="x4">
+            <div id="requestGrid">
+            </div>
+        </div>
+    </div>
+</form>
+

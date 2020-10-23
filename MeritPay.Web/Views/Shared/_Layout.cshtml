@@ -1,0 +1,88 @@
+﻿@using MeritPay.Core.Contracts;
+@{
+    string _p(MeritPay.Core.Common.UserPermission p)
+    {
+        string result = string.Empty;
+        if (!MeritPay.Core.Common.CommonHelper.CurrentUserHasPermission(p))
+        {
+            result = "cssClass: 'd-not', ";
+        }
+        return result;
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" type="image/x-icon" href="@Url.Content("/favicon.ico")" />
+    <link href="@Url.Content(AppSettings.resourceUrl + "Plugin/Kendo/Theme/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content(AppSettings.resourceUrl + "Plugin/Kendo/Theme/kendo.official.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content(AppSettings.resourceUrl + "Plugin/Kendo/Theme/kendo.rtl.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content(AppSettings.resourceUrl + "Plugin/Common/common.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content(AppSettings.themeUrl + "Style/style.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content(AppSettings.resourceUrl + "Plugin/JQuery/jquery.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content(AppSettings.resourceUrl + "Plugin/JQuery/jquery-persian-calendar.js")" type="text/javascript"></script>
+    <script src="@Url.Content(AppSettings.resourceUrl + "Plugin/Kendo/kendo.all.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content((AppSettings.resourceUrl + "Plugin/Kendo/kendo.extension.js?1"))" type="text/javascript"></script>
+    <script src="@Url.Content((AppSettings.resourceUrl + "Plugin/Common/common.js"))" type="text/javascript"></script>
+    <script src="@Url.Content(AppSettings.resourceUrl + "Plugin/JQuery/jquery.maskedinput.js")" type="text/javascript"></script>
+    <script>
+
+    $(function () {
+
+        $("#main-menu").kendoMenu({
+            dataSource: [
+                { text: "داشبورد", url: '@AppSettings.portalPath' },
+                { text: "کارنامه", url: '@Url.Action("Index", "Report")' },
+                {
+                    text: "تنظیمات",
+                    items: [
+                        { text: "بارگذاری فایل اکسل", url: '@Url.Action("Index", "ImportData")' },
+                        { text: "مشتریان حقوقی", url: '@Url.Action("LegalIndex", "CreditMonitoring")' }
+                    ]
+                }
+            ]
+    });
+
+    });
+    </script>
+
+    <script src="@Url.Content(AppSettings.themeUrl + "Scripts/scrollTop.js")" type="text/javascript"></script>
+
+    <style>
+        .iEButton {
+            background: transparent url("~/Plugin/Kendo/Theme/textures/green.png") repeat-x scroll center top !important;
+            border: 1px solid #ab401b !important;
+        }
+
+        .textarea {
+            height: 70px;
+            margin-right: -1px;
+            width: 100%;
+        }
+
+        div[d-wrp] div[d-field].x1 .x1 {
+            border-bottom: 1px solid #bbb;
+        }
+
+        .noWrap {
+            white-space: nowrap;
+        }
+
+        .k-grid td {
+            padding: .4em 0;
+        }
+    </style>
+</head>
+<body class="k-rtl">
+    <partial name="TopPanel.cshtml">
+        <span class="validation-msg"></span>
+        <div class="fullHeight">
+            @RenderBody()
+            <img class="scrollToTop" />
+        </div>
+        <partial name="Footer.cshtml">
+</body>
+</html>
