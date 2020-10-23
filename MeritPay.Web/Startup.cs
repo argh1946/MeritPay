@@ -43,7 +43,7 @@ namespace MeritPay.Web
             //    options.JsonSerializerOptions.PropertyNamingPolicy = null;
             //});
 
-            //بخاطر اینکه در کور نحوه سریالایز تغییر کرده و کندو کار نمیکنه این قسمت اضافه گردید
+            //بخاطر اینکه در کور نحوه سریالایز تغییر کرده و کندو کار نمیکنه این قسمت اضافه گردید1
             services.AddControllersWithViews().AddJsonOptions(options =>
             {
                 options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
