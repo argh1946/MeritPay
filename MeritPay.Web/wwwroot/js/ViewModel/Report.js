@@ -40,8 +40,9 @@
             schema: {
                 parse: function (data) {
                     blockUI(false);
-                    if (data.sucsses !== true)
+                    if (data.Success !== true) {
                         showAlert(data.Message, null, "پیغام");
+                    }
 
                     vm.set('personCode', data.Data.PersonCode);
                     vm.set('branchCode', data.Data.branchCode);
