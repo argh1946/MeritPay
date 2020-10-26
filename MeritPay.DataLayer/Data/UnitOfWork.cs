@@ -48,13 +48,11 @@ namespace MeritPay.Infrastructure.Data
         }
 
         public IPersonRepository PersonRepository => _serviceProvider.GetRequiredService<IPersonRepository>();
-
+        public IPersonScoreRepository PersonScoreRepository => _serviceProvider.GetRequiredService<IPersonScoreRepository>();
         public IReportRepository ReportRepository => _serviceProvider.GetRequiredService<IReportRepository>();
-
         public IBranchRepository BranchRepository => _serviceProvider.GetRequiredService<IBranchRepository>();
-
         public IMeritPayFactorRepository MeritPayFactorRepository => _serviceProvider.GetRequiredService<IMeritPayFactorRepository>();
-
         public IPersonInBranchRepository PersonInBranchRepository => _serviceProvider.GetRequiredService<IPersonInBranchRepository>();
+        public IPersonArzeshyabiRepository PersonArzeshyabiRepository => _serviceProvider.GetRequiredService<IPersonArzeshyabiRepository>();
     }
 }

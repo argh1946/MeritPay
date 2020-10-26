@@ -5,7 +5,7 @@ using MeritPay.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace MeritPay.Infrastructure.Data
-{
+{   
     public class MeritPayContext : DbContext
     {
         public MeritPayContext(DbContextOptions<MeritPayContext> options) : base(options)
@@ -28,6 +28,7 @@ namespace MeritPay.Infrastructure.Data
         public DbSet<Report> Report { get; set; }
         public DbSet<ScoreIndex> ScoreIndex { get; set; }
         public DbSet<ScoreSubIndex> ScoreSubIndex { get; set; }
+        public DbSet<PersonArzeshyabi> PersonArzeshyabi { get; set; }
 
 
     }

@@ -33,6 +33,7 @@ namespace MeritPay.Core.Entities
         public virtual Person Person { get; set; }
         public virtual List<Report> Report { get; set; }
         public virtual List<PersonScore> PersonScore { get; set; }
+        public virtual List<PersonArzeshyabi> PersonArzeshyabi { get; set; }
 
         #endregion
     }

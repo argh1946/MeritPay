@@ -28,7 +28,7 @@ namespace MeritPay.Web
         {
             #region Database Context
             services.AddDbContext<MeritPayContext>(options =>
-            {
+            {                
                 options.UseSqlServer(Configuration.GetConnectionString("MeritPayConnection"));
             });
             #endregion

@@ -276,6 +276,37 @@ namespace MeritPay.Infrastructure.Migrations
                     b.ToTable("Person","MeritPay");
                 });
 
+            modelBuilder.Entity("MeritPay.Core.Entities.PersonArzeshyabi", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Arzyab1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Arzyab2")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ArzyabiDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PeriodId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PersonInBranchId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PeriodId");
+
+                    b.HasIndex("PersonInBranchId");
+
+                    b.ToTable("PersonArzeshyabi","MeritPay");
+                });
+
             modelBuilder.Entity("MeritPay.Core.Entities.PersonInBranch", b =>
                 {
                     b.Property<int>("Id")
@@ -286,8 +317,8 @@ namespace MeritPay.Infrastructure.Migrations
                     b.Property<int>("BranchId")
                         .HasColumnType("int");
 
-                    b.Property<string>("MoveDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("MoveDate")
+                        .HasColumnType("int");
 
                     b.Property<int>("PersonId")
                         .HasColumnType("int");
@@ -317,7 +348,7 @@ namespace MeritPay.Infrastructure.Migrations
                     b.Property<int>("RankInBranch")
                         .HasColumnType("int");
 
-                    b.Property<int>("RankInZoze")
+                    b.Property<int>("RankInZone")
                         .HasColumnType("int");
 
                     b.Property<int>("Score")
@@ -326,8 +357,8 @@ namespace MeritPay.Infrastructure.Migrations
                     b.Property<int>("ScoreSubIndexId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Value")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Value")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -357,7 +388,7 @@ namespace MeritPay.Infrastructure.Migrations
                     b.Property<int>("RankInBranch")
                         .HasColumnType("int");
 
-                    b.Property<int>("RankInZoze")
+                    b.Property<int>("RankInZone")
                         .HasColumnType("int");
 
                     b.Property<int>("Score")
@@ -476,6 +507,21 @@ namespace MeritPay.Infrastructure.Migrations
                     b.HasOne("MeritPay.Core.Entities.Period", "Period")
                         .WithMany("MeritPayLimit")
                         .HasForeignKey("PeriodId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("MeritPay.Core.Entities.PersonArzeshyabi", b =>
+                {
+                    b.HasOne("MeritPay.Core.Entities.Period", "Period")
+                        .WithMany("PersonArzeshyabi")
+                        .HasForeignKey("PeriodId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MeritPay.Core.Entities.PersonInBranch", "PersonInBranch")
+                        .WithMany("PersonArzeshyabi")
+                        .HasForeignKey("PersonInBranchId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

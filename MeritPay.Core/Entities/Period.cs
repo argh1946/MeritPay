@@ -47,6 +47,7 @@ namespace MeritPay.Core.Entities
         public virtual List<MeritPayLimit> MeritPayLimit { get; set; }
         public virtual List<MeritPayFactor> MeritPayFactor { get; set; }
         public virtual List<BranchGroupingInPeriod> BranchGroupingInPeriod { get; set; }
+        public virtual List<PersonArzeshyabi> PersonArzeshyabi { get; set; }
 
         #endregion
     }

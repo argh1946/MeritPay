@@ -13,7 +13,7 @@ namespace MeritPay.Core.DTOs
             Data = data;
         }
     }
-   
+
 
     public class ReportDataVM
     {
@@ -25,6 +25,12 @@ namespace MeritPay.Core.DTOs
         public string Grade { get; set; }
         public string StudyBranch { get; set; }
         public string StudyJob { get; set; }
+        public int BranchCode { get; set; }
+        public string BranchName { get; set; }
+        public string ZoneName { get; set; }
+        public string Arzyab1 { get; set; }
+        public string Arzyab2 { get; set; }
+        public string MaghtaArzeshyabi { get; set; }
 
         public int TaScore { get; set; }
         public int TaRankInBranch { get; set; }
@@ -45,5 +51,18 @@ namespace MeritPay.Core.DTOs
         public int TotalRankInBranch { get; set; }
         public int TotalRankInZone { get; set; }
         public int TotalRankInBank { get; set; }
+
+        public List<ReportTaDataVM> ReportTaDataList { get; set; }
+    }
+
+    public class ReportTaDataVM
+    {
+        public string ScoreIndexTitle { get; set; }
+        public string ScoreSubIndexTitle { get; set; }
+        public decimal Value { get; set; }
+        public int Score { get; set; }
+        public int RankInBranch { get; set; }
+        public int RankInZone { get; set; }
+        public int RankInBank { get; set; }
     }
 }

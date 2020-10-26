@@ -12,11 +12,13 @@ namespace MeritPay.Infrastructure.IoC
         {
             serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
             serviceCollection.AddScoped<IPersonRepository, PersonRepository>();
+            serviceCollection.AddScoped<IPersonScoreRepository, PersonScoreRepository>();
             serviceCollection.AddScoped<IBranchRepository, BranchRepository>();
             serviceCollection.AddScoped<IPersonInBranchRepository, PersonInBranchRepository>();
             serviceCollection.AddScoped<IMeritPayFactorRepository, MeritPayFactorRepository>();
             serviceCollection.AddScoped<IMeritPayFactorRepository, MeritPayFactorRepository>();
             serviceCollection.AddScoped<IReportRepository, ReportRepository>();
+            serviceCollection.AddScoped<IPersonArzeshyabiRepository, PersonArzeshyabiRepository>();
             
         }
     }

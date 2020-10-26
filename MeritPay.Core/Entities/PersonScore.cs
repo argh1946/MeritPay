@@ -21,14 +21,15 @@ namespace MeritPay.Core.Entities
         public int PersonInBranchId { get; set; }
 
         [Display(Name = "ارزش")]
-        public int Value { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal Value { get; set; }
 
         [Display(Name = "امتیاز")]
         public int Score { get; set; }
         [Display(Name = "رتبه در شعبه")]
         public int RankInBranch { get; set; }
         [Display(Name = "رتبه در منطقه")]
-        public int RankInZoze { get; set; }
+        public int RankInZone { get; set; }
         [Display(Name = "رتبه در بانک")]
         public int RankInBank { get; set; }
 

@@ -9,9 +9,11 @@ namespace MeritPay.Core.IoC
         public static void RegisterCoreServices(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddScoped<IPersonService, PersonService>();
+            serviceCollection.AddScoped<IPersonScoreService, PersonScoreService>();
             serviceCollection.AddScoped<IReportService, ReportService>();
             serviceCollection.AddScoped<IImportDataService, ImportDataService>();           
             serviceCollection.AddScoped<IMeritPayFactorService, MeritPayFactorService>();           
+            serviceCollection.AddScoped<IPersonArzeshyabiService, PersonArzeshyabiService>();           
         }
     }
 }

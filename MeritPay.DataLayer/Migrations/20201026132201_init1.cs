@@ -219,7 +219,7 @@ namespace MeritPay.Infrastructure.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PersonId = table.Column<int>(nullable: false),
                     BranchId = table.Column<int>(nullable: false),
-                    MoveDate = table.Column<string>(nullable: true)
+                    MoveDate = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -296,6 +296,38 @@ namespace MeritPay.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "PersonArzeshyabi",
+                schema: "MeritPay",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PeriodId = table.Column<int>(nullable: false),
+                    PersonInBranchId = table.Column<int>(nullable: false),
+                    ArzyabiDate = table.Column<string>(nullable: true),
+                    Arzyab1 = table.Column<int>(nullable: false),
+                    Arzyab2 = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PersonArzeshyabi", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_PersonArzeshyabi_Period_PeriodId",
+                        column: x => x.PeriodId,
+                        principalSchema: "MeritPay",
+                        principalTable: "Period",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_PersonArzeshyabi_PersonInBranch_PersonInBranchId",
+                        column: x => x.PersonInBranchId,
+                        principalSchema: "MeritPay",
+                        principalTable: "PersonInBranch",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Report",
                 schema: "MeritPay",
                 columns: table => new
@@ -306,7 +338,7 @@ namespace MeritPay.Infrastructure.Migrations
                     PersonInBranchId = table.Column<int>(nullable: false),
                     Score = table.Column<int>(nullable: false),
                     RankInBranch = table.Column<int>(nullable: false),
-                    RankInZoze = table.Column<int>(nullable: false),
+                    RankInZone = table.Column<int>(nullable: false),
                     RankInBank = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -360,10 +392,10 @@ namespace MeritPay.Infrastructure.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ScoreSubIndexId = table.Column<int>(nullable: false),
                     PersonInBranchId = table.Column<int>(nullable: false),
-                    Value = table.Column<int>(nullable: false),
+                    Value = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Score = table.Column<int>(nullable: false),
                     RankInBranch = table.Column<int>(nullable: false),
-                    RankInZoze = table.Column<int>(nullable: false),
+                    RankInZone = table.Column<int>(nullable: false),
                     RankInBank = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -440,6 +472,18 @@ namespace MeritPay.Infrastructure.Migrations
                 column: "PeriodId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_PersonArzeshyabi_PeriodId",
+                schema: "MeritPay",
+                table: "PersonArzeshyabi",
+                column: "PeriodId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PersonArzeshyabi_PersonInBranchId",
+                schema: "MeritPay",
+                table: "PersonArzeshyabi",
+                column: "PersonInBranchId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_PersonInBranch_BranchId",
                 schema: "MeritPay",
                 table: "PersonInBranch",
@@ -496,6 +540,10 @@ namespace MeritPay.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "MeritPayLimit",
+                schema: "MeritPay");
+
+            migrationBuilder.DropTable(
+                name: "PersonArzeshyabi",
                 schema: "MeritPay");
 
             migrationBuilder.DropTable(
